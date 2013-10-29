@@ -1,10 +1,19 @@
 class Wish < ActiveRecord::Base
   belongs_to :user
+
   has_many :wish_videos
-  attr_accessible :cost, :title, :verified, :wish_video_attributes
+  has_many :wishes
+  has_many :donations
+
 
   accepts_nested_attributes_for :wish_videos, :allow_destroy => true
 
+  
+  attr_accessible :cost, :title, :verified, :approval_key, :description
 
+  # Value donated so far
+  def donated
+  	donations.sum(&:amount)
+  end
 
 end

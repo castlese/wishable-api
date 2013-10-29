@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20131029121213) do
+=======
+ActiveRecord::Schema.define(:version => 20131029141937) do
+
+  create_table "donations", :force => true do |t|
+    t.integer  "wish_id"
+    t.float    "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "donations", ["wish_id"], :name => "index_donations_on_wish_id"
+>>>>>>> 7db75b757ac34e50a55bb3f55afb9fff6057fda8
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,11 +58,13 @@ ActiveRecord::Schema.define(:version => 20131029121213) do
 
   create_table "wishes", :force => true do |t|
     t.integer  "user_id"
-    t.boolean  "verified",   :default => false
+    t.boolean  "verified",     :default => false
     t.string   "title"
     t.float    "cost"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "approval_key"
+    t.text     "description"
   end
 
   add_index "wishes", ["user_id"], :name => "index_wishes_on_user_id"

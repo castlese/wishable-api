@@ -36,6 +36,7 @@ WishableApi::Application.configure do
   config.assets.debug = true
 
   # Devise actionmailer
+
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   #Paperclip and AWS config
@@ -47,5 +48,17 @@ WishableApi::Application.configure do
       :secret_access_key => 'eG12rL8YZAwxjn7nrDgrCTo9BE2lKFtaWfFvvhsF'
     }
   }  
+
+
+  # Use sendgrid for sending emails locally
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :authentication       => :plain,
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
+    :domain               => 'heroku.com',
+    :enable_starttls_auto => true
+  }
 
 end

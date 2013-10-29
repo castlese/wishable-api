@@ -1,0 +1,19 @@
+Hey,
+
+A new wish has been posted with the following details:
+
+User
+====
+Email: <%= @user.email %>
+Created: <%= @user.created_at %>
+
+Wish
+====
+Title: <%= @wish.title %>
+
+Approval
+========
+In order to approve this, click on the following link: <%= root_url %>v1/approve/<%= @wish.approval_key %>
+
+Thanks,
+Wishable 
