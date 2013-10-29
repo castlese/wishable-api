@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: Wishable_API_development
   pool: 5
-  username: root
+  username: emily
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: Wishable_API_test
   pool: 5
-  username: root
+  username: emily
   password:
 
 production:
@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: Wishable_API_production
   pool: 5
-  username: root
+  username: emily
   password:

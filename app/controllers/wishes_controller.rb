@@ -4,6 +4,7 @@ class WishesController < ApplicationController
 
 	# Create a wish
 	def create
+
 		wish = Wish.new(params[:wish].except(:wish_videos))
 
 		if params[:wish][:wish_videos]
