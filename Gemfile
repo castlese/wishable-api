@@ -22,6 +22,15 @@ end
 
 gem 'jquery-rails'
 
+# Devise
+# https://github.com/plataformatec/devise
+# Used for user accounts
+gem 'devise'
+
+# Rack Cors
+# https://github.com/cyu/rack-cors
+gem 'rack-cors'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
