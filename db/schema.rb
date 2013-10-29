@@ -12,9 +12,13 @@
 # It's strongly recommended to check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20131029121213) do
 =======
 ActiveRecord::Schema.define(:version => 20131029141937) do
+=======
+ActiveRecord::Schema.define(:version => 20131029143603) do
+>>>>>>> 2f5da2eacd4999bd3c5dae4c6c521d8de68c80a5
 
   create_table "donations", :force => true do |t|
     t.integer  "wish_id"
@@ -41,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20131029141937) do
     t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
+    t.integer  "age"
+    t.string   "url"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
@@ -65,6 +72,8 @@ ActiveRecord::Schema.define(:version => 20131029141937) do
     t.datetime "updated_at",                      :null => false
     t.string   "approval_key"
     t.text     "description"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "wishes", ["user_id"], :name => "index_wishes_on_user_id"
