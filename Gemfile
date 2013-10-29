@@ -34,7 +34,7 @@ gem 'devise'
 
 # Rack Cors
 # https://github.com/cyu/rack-cors
-gem 'rack-cors'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Unicorn
 # http://rubygems.org/gems/unicorn

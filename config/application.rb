@@ -62,5 +62,13 @@ module WishableApi
     # Devise
     # Forcing your application to not access the DB or load models when precompiling your assets.
     config.assets.initialize_on_precompile = false
+
+    # CORS
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
