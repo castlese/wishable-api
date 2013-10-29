@@ -12,7 +12,6 @@ class WishVideosController < ApplicationController
 
 
 		if wish_video.save
-
 			response = {:success => true, :wish_video => wish_video.as_json()}
 			render :json => response, :status => 200
 		else

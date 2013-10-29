@@ -4,6 +4,8 @@ class WishVideo < ActiveRecord::Base
     :url => ":s3_domain_url", :path => '/:class/:attachment/:id_partition/:style/:filename'
     attr_accessible :video_data
 
+  validates_presence_of :wish_id
+
 
   def decode_content_from_string(video_data)
 
@@ -16,5 +18,12 @@ class WishVideo < ActiveRecord::Base
     data
   end
 
+  def encode_content_to_string
+  	string = Base64.encode64(open(video.url).to_a.join)
+  end
+
+  def video_url
+  	video.url
+  end
 
 end
