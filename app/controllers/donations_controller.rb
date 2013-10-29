@@ -11,7 +11,7 @@ class DonationsController < ApplicationController
 
 			if donation.save
 				wish.donations << donation
-				response = {:success => true, :donation => donation.as_json}
+				response = {:success => true, :donation => donation.as_json(:include => {:wish => {:only  => [:id, :title, :verified, :cost]}})}
 				render :json => response, :status => 200
 			else
 				response = {:success => false, :errors => donation.errors}
