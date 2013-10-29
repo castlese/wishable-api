@@ -1,13 +1,12 @@
 WishableApi::Application.routes.draw do
 
-  get "rails/g"
+  #get "rails/g"
 
-  get "rails/model"
+  #get "rails/model"
 
-  get "rails/WishVideo"
+  #get "rails/WishVideo"
 
-  resources :donations
-
+  #resources :donations
 
   devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions", :passwords => "users/passwords", :omniauth_callbacks => "users/omniauth_callbacks"}
 
