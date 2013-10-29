@@ -73,7 +73,7 @@ class WishesController < ApplicationController
 				:wish => wish.as_json(
 					:include => {
 						:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]},
-						:wish_videos => {:only => [:wish_id], :methods => [:donated]},
+						:wish_videos => {:only => [:wish_id], :methods => [:video_url]},
 						:donations => {:only => [:amount], :include => {:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]}}}
 					}
 				)
