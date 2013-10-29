@@ -67,7 +67,7 @@ WishableApi::Application.configure do
 
   # Devise - Needs to change to Heroku app
 
-  config.action_mailer.default_url_options = { :host => 'www.itagged.me' }
+  config.action_mailer.default_url_options = { :host => 'wishable-production.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
