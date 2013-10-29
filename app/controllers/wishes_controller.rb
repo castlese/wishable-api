@@ -7,7 +7,7 @@ class WishesController < ApplicationController
 		wish = Wish.new(params[:wish])
 		if wish.save
 			current_user.wishes << wish
-			response = {:success => true, :wish => wish.as_json}
+			response = {:success => true, :wish => wish.as_json(:include => {:user => {:only => [:id, :email]}})}
 			render :json => response, :status => 200
 		else
 			response = {:success => false, :errors => wish.errors}
