@@ -32,6 +32,9 @@ gem 'high_voltage'
 # Used for user accounts
 gem 'devise'
 
+gem 'paperclip', "~> 3.0"
+gem 'aws-sdk'
+
 # Rack Cors
 # https://github.com/cyu/rack-cors
 gem 'rack-cors'

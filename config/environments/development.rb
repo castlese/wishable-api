@@ -7,7 +7,7 @@ WishableApi::Application.configure do
   config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = true
+  config.whiny_nils = false
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -37,4 +37,15 @@ WishableApi::Application.configure do
 
   # Devise actionmailer
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  #Paperclip and AWS config
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'wishable-storage',
+      :access_key_id => 'AKIAJHXKMRTIJLF4PFHA',
+      :secret_access_key => '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'
+    }
+  }  
+
 end

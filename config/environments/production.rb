@@ -67,4 +67,16 @@ WishableApi::Application.configure do
 
   # Devise - Needs to change to Heroku app
   config.action_mailer.default_url_options = { :host => 'wishable-production.herokuapp.com' }
+
+
+  #Paperclip and AWS config
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'wishable-storage',
+      :access_key_id => 'AKIAJHXKMRTIJLF4PFHA',
+      :secret_access_key => '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'
+    }
+  } 
 end
+
