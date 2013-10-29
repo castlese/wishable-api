@@ -1,4 +1,26 @@
 <h2>User Endpoints</h2>
 
-<p>Register a user</p>
-<b>Example CURL:</b> curl -H "Content-Type: application/json" -d '{"user":{"email":"you@email.com","password":"mypassissuperlog"}}' -X POST <%= root_url %>v1/users/register
+<div class="endpoint">
+	<p>Register a user</p>
+	<div class="curl">
+	<b>Example CURL:</b> curl -H "Content-Type: application/json" -d '{"user":{"email":"you@email.com","password":"mypassissuperlog"}}' -X POST <%= root_url %>v1/users/register
+	</div>
+
+	<div class="response">
+	<b>Response</b>
+	<pre>
+	<code>
+	{
+	    "success": true,
+	    "user": {
+	        "authentication_token": "j3jJRix_DCma9aX4bW8D",
+	        "created_at": "2013-10-29T10:56:51Z",
+	        "email": "you@email.com",
+	        "id": 5,
+	        "updated_at": "2013-10-29T10:56:51Z"
+	    }
+	}
+	</code>
+	</pre>
+	</div>
+</div>

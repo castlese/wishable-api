@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+.response {
+	padding-top:20px;
+}
+
+.endpoint {
+	border-top:1px solid #3d3d3d;
+}
+
+.endpoint p {
+	font-weight: bold;
+	font-size: 20px;
+}
