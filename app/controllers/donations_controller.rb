@@ -9,9 +9,15 @@ class DonationsController < ApplicationController
 		if wish
 			donation = Donation.new(params[:donation])
 
+			current_user.join_stripe! unless current_user.has_stripe_account?
+
+			# Insert code here to process a card with the amount
+
 			if donation.save
 				wish.donations << donation
 				current_user.donations << donation
+
+				wish.funded = true if wish.donated >= wish.cost
 				
 				response = {:success => true, :donation => donation.as_json(:include => {:wish => {:only  => [:id, :title, :verified, :cost]}})}
 				render :json => response, :status => 200

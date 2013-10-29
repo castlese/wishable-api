@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029161508) do
+ActiveRecord::Schema.define(:version => 20131029165905) do
 
   create_table "donations", :force => true do |t|
     t.integer  "wish_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20131029161508) do
     t.string   "name"
     t.integer  "age"
     t.string   "url"
+    t.string   "stripe_id"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20131029161508) do
     t.text     "description"
     t.float    "lat"
     t.float    "lng"
+    t.boolean  "funded",       :default => false
   end
 
   add_index "wishes", ["user_id"], :name => "index_wishes_on_user_id"

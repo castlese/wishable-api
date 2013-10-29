@@ -16,4 +16,16 @@ class User < ActiveRecord::Base
     gravatar_id = Digest::MD5::hexdigest(email).downcase  
     "http://gravatar.com/avatar/#{gravatar_id}.png"  
   end
+
+  # Stripe Account?
+  def has_stripe_account?
+    !stripe_id.nil?
+  end
+
+  def join_stripe!
+    customer = Stripe::Customer.create(:email => email)
+    logger.warn customer.id
+    self.stripe_id = customer.id
+    self.save
+  end
 end

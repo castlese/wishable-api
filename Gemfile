@@ -44,6 +44,10 @@ gem 'rack-cors', :require => 'rack/cors'
 # Used for multiple web processes from one heroku dyno
 gem 'unicorn'
 
+# Stripe
+# Payment Integration
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

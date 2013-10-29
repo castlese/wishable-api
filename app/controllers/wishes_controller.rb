@@ -66,7 +66,7 @@ class WishesController < ApplicationController
 
 	# Show a wish
 	def show
-		wish = Wish.where(:id => params[:id], :verified => true).first
+		wish = Wish.where(:id => params[:id]).first
 		if wish
 			response = {
 				:success => true,
