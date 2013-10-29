@@ -9,7 +9,7 @@ class Wish < ActiveRecord::Base
   accepts_nested_attributes_for :wish_videos, :allow_destroy => true
 
   
-  attr_accessible :cost, :title, :verified, :approval_key, :description
+  attr_accessible :cost, :title, :verified, :approval_key, :description, :wish_videos_attributes
 
   # Value donated so far
   def donated

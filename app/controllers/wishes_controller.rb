@@ -5,8 +5,11 @@ class WishesController < ApplicationController
 	# Create a wish
 	def create
 		wish = Wish.new(params[:wish])
-		video = WishVideo.decode_content_from_string(params[:wish][:wish_video][:video_data])
-		wish.videos << video
+		media = params[:wish][:wish_video_attributes]
+		media.each do |m|
+			video = WishVideo.decode_content_from_string(m)			
+			wish.videos << video
+		end
 		wish.approval_key = SecureRandom.hex(16)
 
 		if wish.save
