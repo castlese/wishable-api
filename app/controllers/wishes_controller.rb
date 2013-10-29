@@ -6,6 +6,7 @@ class WishesController < ApplicationController
 	def create
 
 		wish = Wish.new(params[:wish].except(:wish_videos))
+
 		if params[:wish][:wish_videos]
 			media = params[:wish][:wish_videos]
 			media.each do |m|

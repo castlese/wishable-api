@@ -14,6 +14,7 @@ WishableApi::Application.routes.draw do
     # User interactions
     post "/v1/users/register", :to => "users/registrations#create", :defaults => { :format => 'json' }, :as => 'user_sign_up'
     post "/v1/users/login", :to => "users/sessions#create", :defaults => { :format => 'json' }, :as => 'user_sign_in'
+    get "/v1/users/wishes", :to => "users/registrations#wishes", :defaults => { :format => 'json' }, :as => 'user_wishes'
   end
 
   # Wishes
