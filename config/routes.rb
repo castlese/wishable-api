@@ -1,5 +1,10 @@
 WishableApi::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions", :passwords => "users/passwords", :omniauth_callbacks => "users/omniauth_callbacks"}
+
+  devise_scope :user do
+    # User interactions
+    post "/v1/users/register", :to => "users/registrations#create", :defaults => { :format => 'json' }, :as => 'user_sign_up'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -55,7 +60,7 @@ WishableApi::Application.routes.draw do
   authenticated :user do
     #root :to => "apps#index"
   end
-  root :to => 'high_voltage/pages#show', id: 'homepage'
+  root :to => 'high_voltage/pages#show', id: 'user_api'
 
   # See how all your routes lay out with "rake routes"
 
