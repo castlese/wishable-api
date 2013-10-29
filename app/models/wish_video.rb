@@ -3,8 +3,6 @@ class WishVideo < ActiveRecord::Base
   has_attached_file :video, 
     :url => ":s3_domain_url", :path => '/:class/:attachment/:id_partition/:style/:filename'
 
-
-
   def decode_content_from_string(video_data)
     data = StringIO.new(Base64.decode64(video_data))
     data.class.class_eval { attr_accessor :content_type, :original_filename }
