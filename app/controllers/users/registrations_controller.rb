@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	# Register a new user
 	def create
 		user = User.new(params[:user])
-		user.url = user.gravatar
+		#user.url = user.gravatar
 
 		if user.save
 			user.ensure_authentication_token!

@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20131029121213) do
-=======
-ActiveRecord::Schema.define(:version => 20131029141937) do
-=======
 ActiveRecord::Schema.define(:version => 20131029143603) do
->>>>>>> 2f5da2eacd4999bd3c5dae4c6c521d8de68c80a5
 
   create_table "donations", :force => true do |t|
     t.integer  "wish_id"
@@ -29,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20131029143603) do
   end
 
   add_index "donations", ["wish_id"], :name => "index_donations_on_wish_id"
->>>>>>> 7db75b757ac34e50a55bb3f55afb9fff6057fda8
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
