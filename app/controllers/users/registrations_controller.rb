@@ -4,10 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	# Register a new user
 	def create
 		user = User.new(params[:user])
+		user.url = user.gravatar
+
 		if user.save
 			user.ensure_authentication_token!
 
-			response = {:success => true, :user => user.as_json(:only => [:id, :email, :authentication_token, :created_at, :updated_at])}
+			response = {:success => true, :user => user.as_json(:only => [:id, :email, :authentication_token, :created_at, :updated_at, :url, :name, :age])}
 			render :json => response, :status => 200
 		else
 			response = {:success => false, :errors => user.errors}

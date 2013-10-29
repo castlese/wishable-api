@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
+         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :name, :age, :url
 
   has_many :wishes
   has_many :donations
@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  # Fetch a users gravatar
+  def gravatar
+    gravatar_id = Digest::MD5::hexdigest(email).downcase  
+    "http://gravatar.com/avatar/#{gravatar_id}.png"  
+  end
 end

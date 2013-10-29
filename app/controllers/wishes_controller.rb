@@ -13,7 +13,7 @@ class WishesController < ApplicationController
 			# Send a validation email for the admin to approve.
 			AdminMailer.send_validation(current_user, wish).deliver
 
-			response = {:success => true, :wish => wish.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at]}})}
+			response = {:success => true, :wish => wish.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]}})}
 			render :json => response, :status => 200
 		else
 			response = {:success => false, :errors => wish.errors}
@@ -43,7 +43,7 @@ class WishesController < ApplicationController
 		if wishes.count > 0
 			response = {
 				:success => true,
-				:wishes => wishes.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at]}}, :methods => [:donated])
+				:wishes => wishes.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]}}, :methods => [:donated])
 			}
 
 			render :json => response, :status => 200
@@ -61,8 +61,8 @@ class WishesController < ApplicationController
 				:success => true,
 				:wish => wish.as_json(
 					:include => {
-						:user => {:only => [:id, :email, :created_at, :updated_at]},
-						:donations => {:only => [:amount], :include => {:user => {:only => [:id, :email, :created_at, :updated_at]}}}
+						:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]},
+						:donations => {:only => [:amount], :include => {:user => {:only => [:id, :email, :created_at, :updated_at, :url, :name, :age]}}}
 					}
 				)
 			}
