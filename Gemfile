@@ -22,6 +22,11 @@ end
 
 gem 'jquery-rails'
 
+# High Voltage
+# https://github.com/thoughtbot/high_voltage
+# Used for static pages
+gem 'high_voltage'
+
 # Devise
 # https://github.com/plataformatec/devise
 # Used for user accounts

@@ -52,6 +52,11 @@ WishableApi::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
+  authenticated :user do
+    #root :to => "apps#index"
+  end
+  root :to => 'high_voltage/pages#show', id: 'homepage'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
