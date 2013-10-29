@@ -9,8 +9,8 @@ class DonationsController < ApplicationController
 		if wish
 			donation = Donation.new(params[:donation])
 
-			current_user.join_stripe! if !current_user.has_stripe_account?
-			
+			current_user.join_stripe! unless current_user.has_stripe_account?
+
 			# Insert code here to process a card with the amount
 
 			if donation.save
