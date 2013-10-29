@@ -22,6 +22,9 @@ WishableApi::Application.routes.draw do
   get "/v1/wishes/:id", :to => "wishes#show", :defaults => { :format => 'json' }, :as => 'show_wish'
   get "/v1/approve/:approval_key", :to => "wishes#approve", :defaults => { :format => 'json' }, :as => 'approve_wish'
 
+  # Wish Videos
+  post "/v1/wish_videos", :to => "wish_videos#create", :defaults => { :format => 'json' }, :as => 'create_a_video'
+
   # Donations
   post "/v1/wishes/:id/donations", :to => "donations#create", :defaults => { :format => 'json' }, :as => 'add_a_donation'
 

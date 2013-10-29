@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029143603) do
+ActiveRecord::Schema.define(:version => 20131029161508) do
 
   create_table "donations", :force => true do |t|
     t.integer  "wish_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20131029143603) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.integer  "wish_id"
   end
 
   create_table "wishes", :force => true do |t|

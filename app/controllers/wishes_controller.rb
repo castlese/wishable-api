@@ -6,11 +6,13 @@ class WishesController < ApplicationController
 	def create
 
 		wish = Wish.new(params[:wish].except(:wish_videos))
-		media = params[:wish][:wish_videos]
-		media.each do |m|
-			video = WishVideo.new
-			video.video = video.decode_content_from_string(m["data"])
-			wish.wish_videos << video
+		if params[:wish][:wish_videos]
+			media = params[:wish][:wish_videos]
+			media.each do |m|
+				video = WishVideo.new
+				video.video = video.decode_content_from_string(m["data"])
+				wish.wish_videos << video
+			end
 		end
 
 		wish.approval_key = SecureRandom.hex(16)

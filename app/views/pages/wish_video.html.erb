@@ -1,0 +1,40 @@
+<h2>Wish Videos Endpoints</h2>
+
+<div class="endpoint">
+	<p>Create a video</p>
+	<div class="curl">
+	<b>Example CURL:</b> curl -H "Content-Type: application/json" -d '{"wish_video":{"wish_id":1,"video":"XpybupFZOUsA7tS+BzF9xgMPVRkZCS"}}' -X POST <%= root_url %>v1/wish_videos?auth_token\=j3jJRix_DCma9aX4bW8D
+	</div>
+
+	<ul>
+		<li>wish_id &bull; int</li>
+		<li>video &bull; string</li>
+	</ul>
+
+	<div class="response">
+	<b>Response</b>
+	
+	<pre>
+	<code>
+	{
+		"success":true,"wish_video":{
+			"created_at":"2013-10-29T16:19:06Z",
+			"id":2,
+			"updated_at":"2013-10-29T16:19:06Z",
+			"video_content_type":"image/jpg",
+			"video_file_name":
+			"video_2f18ac2f62635d87d40028407740a225d13862579752b76f7473e9d168bc22f4.jpg",
+			"video_file_size":4457,
+			"video_updated_at":"2013-10-29T16:19:06Z",
+			"wish_id":1
+		}
+	}
+
+	
+	</code>
+	</pre>
+	</div>
+</div>
+</div>
+
+</div>
