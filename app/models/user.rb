@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
 
   def join_stripe!
     customer = Stripe::Customer.create(:email => email)
-    stripe_id = customer.id
+    logger.warn customer.id
+    self.stripe_id = customer.id
+    self.save
   end
 end
