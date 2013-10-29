@@ -4,4 +4,9 @@ class Wish < ActiveRecord::Base
   has_many :donations
   
   attr_accessible :cost, :title, :verified
+
+  # Value donated so far
+  def donated
+  	donations.sum(&:amount)
+  end
 end

@@ -21,7 +21,7 @@ class WishesController < ApplicationController
 		if wishes.count > 0
 			response = {
 				:success => true,
-				:wishes => wishes.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at]}})
+				:wishes => wishes.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at]}}, :methods => [:donated])
 			}
 
 			render :json => response, :status => 200
