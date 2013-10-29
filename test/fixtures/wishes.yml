@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  verified: false
+  title: MyString
+  cost: 1.5
+
+two:
+  user: 
+  verified: false
+  title: MyString
+  cost: 1.5

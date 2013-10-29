@@ -7,6 +7,10 @@ WishableApi::Application.routes.draw do
     post "/v1/users/login", :to => "users/sessions#create", :defaults => { :format => 'json' }, :as => 'user_sign_in'
   end
 
+  # Wishes
+  post "/v1/wishes", :to => "wishes#create", :defaults => { :format => 'json' }, :as => 'create_a_wish'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

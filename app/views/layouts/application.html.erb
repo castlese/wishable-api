@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WishableApi</title>
+  <title>Wishable - API</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<h1>Wishable API</h1>
+	<h1>Wishable API</h1>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<div class="links">
+		<ul>
+			<li><%= link_to "User Endpoints", page_path('user_api') %></li>
+			<li><%= link_to "Wish Endpoints", page_path('wish_api') %></li>
+		</ul>
+	</div>
 
-<%= yield %>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<%= yield %>
 
 </body>
 </html>
