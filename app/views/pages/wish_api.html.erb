@@ -32,3 +32,36 @@
 	</pre>
 	</div>
 </div>
+
+<div class="endpoint">
+	<p>Latest Wishes</p>
+	<div class="curl">
+	<b>Example CURL:</b> curl -H "Content-Type: application/json" -X GET <%= root_url %>v1/wishes?auth_token\=j3jJRix_DCma9aX4bW8D
+	</div>
+
+	<div class="response">
+	<b>Response</b>
+	<pre>
+	<code>
+	{
+	    "success": true,
+	    "wish": {
+	        "cost": 200.0,
+	        "created_at": "2013-10-29T11:57:42Z",
+	        "id": 7,
+	        "title": "A Wish!",
+	        "updated_at": "2013-10-29T11:57:42Z",
+	        "user": {
+	            "created_at": "2013-10-29T10:56:51Z",
+	            "email": "you@email.com",
+	            "id": 5,
+	            "updated_at": "2013-10-29T11:57:42Z"
+	        },
+	        "user_id": 5,
+	        "verified": false
+	    }
+	}
+	</code>
+	</pre>
+	</div>
+</div>

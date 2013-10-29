@@ -14,4 +14,20 @@ class WishesController < ApplicationController
 			render :json => response, :status => 500
 		end
 	end
+
+	# Latest wishes
+	def latest
+		wishes = Wish.where(:verified => true).order("created_at desc")
+		if wishes.count > 0
+			response = {
+				:success => true,
+				:wishes => wishes.as_json(:include => {:user => {:only => [:id, :email, :created_at, :updated_at]}})
+			}
+
+			render :json => response, :status => 200
+		else
+			response = {:success => false, :error => "No valid wishes found"}
+			render :json => response, :status => 404
+		end
+	end
 end
