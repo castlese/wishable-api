@@ -66,7 +66,7 @@ WishableApi::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Devise - Needs to change to Heroku app
-  config.action_mailer.default_url_options = { :host => 'wishable.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'wishable-production.herokuapp.com' }
 
   # Stop assets precompilation
   config.assets.initialize_on_precompile = false
