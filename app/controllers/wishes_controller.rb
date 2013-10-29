@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
 	respond_to :json
-	before_filter :authenticate_user!, :only => [:create, :latest, :show]
+	before_filter :authenticate_user!, :only => [:create]
 
 	# Create a wish
 	def create
@@ -34,7 +34,7 @@ class WishesController < ApplicationController
 			reponse = {:success => false, :error => "Invalid approval key"}
 			render :json => response, :status => 500
 		end
-		
+
 	end
 
 	# Latest wishes
