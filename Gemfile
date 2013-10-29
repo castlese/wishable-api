@@ -31,6 +31,11 @@ gem 'devise'
 # https://github.com/cyu/rack-cors
 gem 'rack-cors'
 
+# Unicorn
+# http://rubygems.org/gems/unicorn
+# Used for multiple web processes from one heroku dyno
+gem 'unicorn'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
