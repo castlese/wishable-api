@@ -1,4 +1,7 @@
 WishableApi::Application.routes.draw do
+  resources :donations
+
+
   devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions", :passwords => "users/passwords", :omniauth_callbacks => "users/omniauth_callbacks"}
 
   devise_scope :user do
@@ -10,6 +13,8 @@ WishableApi::Application.routes.draw do
   # Wishes
   post "/v1/wishes", :to => "wishes#create", :defaults => { :format => 'json' }, :as => 'create_a_wish'
 
+  # Donations
+  post "/v1/wishes/:id/donations", :to => "donations#create", :defaults => { :format => 'json' }, :as => 'add_a_donation'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
