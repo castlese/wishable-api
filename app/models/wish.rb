@@ -3,7 +3,7 @@ class Wish < ActiveRecord::Base
   has_many :wishes
   has_many :donations
   
-  attr_accessible :cost, :title, :verified, :approval_key
+  attr_accessible :cost, :title, :verified, :approval_key, :description
 
   # Value donated so far
   def donated
