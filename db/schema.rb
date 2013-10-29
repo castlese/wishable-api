@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029143603) do
+ActiveRecord::Schema.define(:version => 20131029162102) do
 
   create_table "donations", :force => true do |t|
     t.integer  "wish_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131029143603) do
     t.text     "description"
     t.float    "lat"
     t.float    "lng"
+    t.boolean  "funded",       :default => false
   end
 
   add_index "wishes", ["user_id"], :name => "index_wishes_on_user_id"

@@ -49,7 +49,6 @@ WishableApi::Application.configure do
     }
   }  
 
-
   # Use sendgrid for sending emails locally
   ActionMailer::Base.smtp_settings = {
     :address              => 'smtp.sendgrid.net',

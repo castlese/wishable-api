@@ -66,10 +66,7 @@ WishableApi::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Devise - Needs to change to Heroku app
-
   config.action_mailer.default_url_options = { :host => 'wishable-production.herokuapp.com' }
-
-
 
   #Paperclip and AWS config
   config.paperclip_defaults = {
